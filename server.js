@@ -31,7 +31,7 @@ app.set('views', __dirname + './views')
  app.use(methodOverride('X-HTTP-Method-Override')); 
  app.use(express.static(__dirname + '/public')); 
 
-
+//ashok
 
 require('./config/db')(mysql);
 require('./app/routes/route')(app);
