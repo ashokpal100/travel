@@ -1,0 +1,39 @@
+<div class="frameContainer"layout-wrap style="padding-top:0px;padding-left:1px;padding-right:1px;">
+        <md-whiteframe class="md-whiteframe-1dp"  layout="row" flex-xs="100" flex-gt-sm="100" flex-gt-md="60">
+        <md-content layout-padding  flex="100" style="padding-top:0px;color:#4885ed;">
+        <form name="passForm">
+                 <div flex="100" layout="row">
+                  <md-input-container flex="100">
+                        <label><span class="fa fa-unlock"></span> Current Password</label>
+                        <input ng-model="oldPassword" name="oldPassword" required >
+                          <div ng-messages="passForm.fName.$error && passForm.fName.$invalid" role="alert" multiple>
+                            <div ng-message="required" class="my-message">Name is required.</div>
+                            <div ng-message="pattern" class="my-message">Max length 20 char</div>
+                         </div>
+                  </md-input-container>
+              </div>
+                  <div flex="100" layout="row">
+                  <md-input-container flex="100">
+                        <label><span class="fa fa-lock"></span> New Password</label>
+                        <input ng-model="newPassword" name="newPassword" required ng-pattern="/^[a-zA-Z]{1,20}$/" md-placeholder="enter name a to z">
+                          <div ng-messages="userForm.lName.$error && userForm.lName.$invalid" role="alert" multiple>
+                            <div ng-message="required" class="my-message">Last name  is required.</div>
+                            <div ng-message="pattern" class="my-message">Max length 20 char</div>
+                         </div>
+                  </md-input-container>
+              </div>
+               <div flex="100" layout="row">
+                  <md-input-container flex="100">
+                        <label><span class="fa fa-lock"></span> Re-enter Password</label>
+                        <input ng-model="confirmPassword" name="confirmPassword" required ng-pattern="/^[a-zA-Z]{1,20}$/" md-placeholder="enter name a to z">
+                          <div ng-messages="userForm.lName.$error && userForm.lName.$invalid" role="alert" multiple>
+                            <div ng-message="required" class="my-message">Last name  is required.</div>
+                            <div ng-message="pattern" class="my-message">Max length 20 char</div>
+                         </div>
+                  </md-input-container>
+              </div>
+          <button class="pull-right md-button md-default-theme" ng-transclude="" type="submit" ng-disabled="passForm.$invalid || confirmNewPassword !== newPassword" aria-disabled="true" disabled="disabled"><span class="ng-scope">Save</span></button>
+      </form>
+      </md-content>
+    </md-whiteframe>
+</div>

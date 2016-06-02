@@ -1,0 +1,30 @@
+<div ui-view="navbar" style="padding-bottom:0px;"></div>
+<div class="frameContainer" layout layout-align="center"layout-wrap style="padding-top:0px;padding-left:1px;padding-right:1px;">
+
+        <md-whiteframe class="md-whiteframe-1dp"  layout="row" flex-xs="100" flex-gt-sm="70" flex-gt-md="40" layout layout-align="center center">
+
+        <md-content layout-padding  flex="100" style="padding-top:0px;">
+
+        <form name="userForm" style="padding-top:0px;">
+          
+          <div flex="100" layout="row" style="color:#4885ed;font-wieght:bold;" layout-align="center center">
+                  <div>
+                        <h4>Sign Up Options</h4>
+                  </div>
+        </div>
+        <div flex="100" layout="row" class="md-inline-form" layout-align="center center" style="padding-top:0px;">
+            
+        
+        <div flex="100" layout="row" class="md-inline-form"  style="background-color:" layout-align="center center">
+           <section layout="row" flex="50" layout-sm="column" layout-align="center center" layout-wrap>
+                <a ui-sref="signup.user"> <md-button class="md-raised" ng-style="myStyle" ng-click="myStyle={background:'#32cd32'};myStyle1={background:'white'};" style="background-color:#32cd32">Users</md-button></a>
+           </section>
+           <section layout="row" flex="50" layout-sm="column" layout-align="center center" layout-wrap>
+                <a ui-sref="signup.travel"> <md-button class="md-raised" ng-style="myStyle1" ng-click="myStyle1={background:'#32cd32'};myStyle={background:'white'};">Travels</md-button></a>
+           </section>
+        </div>
+        </div>
+        </md-content>
+</md-whiteframe>
+</div>
+<div autoscroll="false" ui-view></div>

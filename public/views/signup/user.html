@@ -1,0 +1,92 @@
+<div class="frameContainer" layout layout-align="center"layout-wrap style="padding-top:1px;padding-left:1px;padding-right:1px;">
+        <md-whiteframe class="md-whiteframe-1dp"  layout="row" flex-xs="100" flex-gt-sm="70" flex-gt-md="40" layout layout-align="center center">
+        <md-content layout-padding  flex="100" style="padding-top:0px;">
+        <form name="userForm" style="padding-top:0px;">
+          <div flex="100" layout="row" style="background-color:" layout-align="center center">
+            <div class="logo-holder" >
+                          <img src="img/browse-img.png" alt="Profile Pic">
+                          <input  type="file" id="fileUpload"  accept="image/*" class="upload-hover" style="overflow: hidden;" ng-model="myModel" media-preview>
+                </div>
+        </div>
+                <div flex="100" layout="row" class="md-inline-form" layout-align="center center" style="padding-top:0px;">
+                 
+               </div>
+               <div flex="100" layout="row" style="padding-top:33px;" layout-align="center center">
+                  <div>
+                        <h4>Users Sign Up</h4>
+                  </div>
+        </div>
+               <div flex="100" layout="row" class="md-inline-form">
+                  <md-input-container flex="50">
+                        <label><span class="fa fa-user"></span> First Name</label>
+                        <input ng-model="user.fName" name="fName" required ng-pattern="/^[a-zA-Z]{1,20}$/" md-placeholder="enter name a to z">
+                          <div ng-messages="userForm.fName.$error && userForm.fName.$invalid" role="alert" multiple>
+                            <div ng-message="required" class="my-message">Name is required.</div>
+                            <div ng-message="pattern" class="my-message">Max length 20 char</div>
+                         </div>
+                  </md-input-container>
+                  <md-input-container flex="50">
+                        <label><span class="fa fa-user"></span> Last Name</label>
+                        <input ng-model="user.lName" name="lName" required ng-pattern="/^[a-zA-Z]{1,20}$/" md-placeholder="enter name a to z">
+                          <div ng-messages="userForm.lName.$error && userForm.lName.$invalid" role="alert" multiple>
+                            <div ng-message="required" class="my-message">Last name  is required.</div>
+                            <div ng-message="pattern" class="my-message">Max length 20 char</div>
+                         </div>
+                  </md-input-container>
+              </div>
+              <div flex="100" layout="row">
+                  <md-input-container flex="100">
+                        <label><span class="fa fa-envelope"></span>  Email Address</label>
+                           <input type="email" name="email" ng-model="user.email" unique-username ng-pattern="/^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$/" required/>
+                            <span ng-show="userForm.email.$error.unique" style="color:red">Email Already Registered !</span>
+                            <!-- <span style="color:red" ng-show="userForm.email.$error.required && userForm.email.$dirty">* Email required</span> -->
+                             <span ng-show="userForm.email.$dirty && userForm.email.$error.pattern" class="invalid ng-hide" aria-hidden="true">
+                              <span style="color:red">Invalid Email Address</span>
+                            </span>
+                  </md-input-container>
+              </div>
+              <div layout-gt-xs="row" ng-cloak class="md-inline-form">
+                      <md-input-container flex="50">
+                      <label><span class="fa fa-phone"></span>  Mobile No.</label>
+                      <input ng-model="user.mobileNumber"  name="mobileNumber"required ng-pattern="/^[0-9]{10}$/" md-maxlength="10">
+                        <div ng-messages="userForm.mobileNumber.$error && userForm.mobileNumber.$invalid" role="alert" multiple>
+                            <div ng-message="required" class="my-message">Mobile number is required.</div>
+                            <div ng-message="pattern" class="my-message">Only Number is allow</div>
+                            <div ng-message="md-maxlength" class="my-message">Don't use the long 10 digit</div>
+                         </div>
+                  </md-input-container>
+                      
+                      <md-datepicker ng-model="user.dob" md-placeholder="Enter DOB date">
+                      </md-datepicker>
+            </div>
+            <div flex="100" layout="row">
+                  <md-input-container flex="50">
+                        <label><span class="fa fa-lock"></span> Enter Password</label>      
+                        <input ng-model="user.password" type="password" name="password" required ng-minlength="6">
+                        <span style="color:red" ng-show="userForm.password.$error.required && userForm.password.$dirty">* Password required</span>
+                        <span style="color:red" ng-show="userForm.password.$error.minlength">* Must be minimum 6 characters</span>
+                  </md-input-container>
+                  <md-input-container flex="50">
+                        <label><span class="fa fa-lock"></span> Re-enter Password</label>
+        <input ng-model="user.verify" type="password" name="verify" required nx-equal-ex="user.password">
+        <span class="error"  style="color:red" ng-show="userForm.verify.$error.nxEqualEx">Passwords do not match</span>
+        <span class="error"  style="color:green" ng-show="userForm.verify.$dirty && userForm.verify.$valid">Password matchs<i class="glyphicon glyphicon-ok "style="color:green"></i></span>
+                  </md-input-container>
+                  <!-- <p>{{time | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+                      <p>{{parsed}}</p> -->
+              </div>
+            <div flex="100" layout="row">
+           <div flex="100"layout="row" class="md-inline-form" layout layout-align="center center" style="padding-top:15px;">
+
+          <md-button class="md-raised md-primary" ng-click="signup()" ng-disabled="userForm.$invalid">Register</md-button><md-button class="md-raised md-primary" ng-click="">Cancel</md-button>
+
+        </div>
+              </div> 
+              
+             </form></md-content>
+        </div>
+       
+      </form>
+    </div>
+  </md-content>
+</md-whiteframe>

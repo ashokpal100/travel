@@ -1,0 +1,63 @@
+html,body {
+	width: 100%;
+}
+.quick-active {
+  background-color: #f5f5f5;
+}
+.responsive-bg {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: absolute;
+  background-size: cover;
+  background-color: #464646;
+}
+a:hover {
+  text-decoration: none;
+}
+.logo-holder {
+  width: 70px;
+  height: 70px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  top: 35px;
+  cursor: pointer;
+}
+.logo-holder img {
+  max-width: 70px;
+  position: absolute;
+  vertical-align: middle;
+}
+.logo-holder .upload-hover {
+  opacity: 0;
+  color: #fff;
+  font-size: 30px;
+  text-align: center;
+  line-height: 70px;
+  cursor: pointer;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  z-index: 1000;
+}
+.logo-holder .upload-hover:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 1;
+  /*visibility: hidden;*/
+  /*width: 300px;*/
+}
+
+#login-nimbus .doc-add .logo-holder img {
+  max-width: 80px;
+  left: -5px;
+  top: -5px;
+}
+
+#login-nimbus .verify .logo-holder img {
+  max-width: 80px;
+  left: -5px;
+  top: -5px;
+}
+

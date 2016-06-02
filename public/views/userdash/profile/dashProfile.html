@@ -1,0 +1,21 @@
+<div class="container-fluid" style="margin-left:20px;" ng-init="init()">
+    <div class="row">
+      <div class="col-md-2 col-xs-4 register1">
+        <div class="list-group">
+  <div class="background-blue font-white nav-block bold font-15 list-group-item" style="background-color:#4885ed;font-weight:bold;font-size:15;color:white;">Profile</div>
+  <a ui-sref="dash.dashProfile.perInfo" ui-sref-opts="{reload: true}" class="list-group-item font-13">Personal Information</a>
+  <a ui-sref="dash.dashProfile.address" ui-sref-opts="{reload: true}" class="list-group-item font-13">Address</a>
+  <a ui-sref="dash.dashProfile.changePass" ui-sref-opts="{reload: true}" class="list-group-item font-13">Change Password</a>
+</div>
+    </div>
+    <div class="col-md-10 col-xs-8">
+      <div  class="row">
+        <div class="col-md-1 col-xs-1"></div>
+        <div class="col-md-10 col-xs-10" autoscroll="false" ui-view></div>
+        <div class="col-md-1 col-xs-1"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div ng-controller="loginCtrl" class="support ng-scope"><a ng-click="esupport()" tabindex="0"><img src="img/support.png"></a></div> -->

@@ -1,0 +1,25 @@
+<div class="frameContainer"layout-wrap style="padding-top:0px;padding-left:1px;padding-right:1px;">
+        <md-whiteframe class="md-whiteframe-1dp"  layout="row" flex-xs="100" flex-gt-sm="100" flex-gt-md="60">
+        <md-content layout-padding  flex="100" style="padding-top:0px;color:#4885ed;">
+                      <label class="label-blue">Address</label>
+                      <span ng-click="addressAddmdDialogOpen()" class="glyphicon glyphicon-plus pull-right" role="button" style="padding-right:20px;"></span>
+                <div flex="100" layout="row" class="md-inline-form">
+                  <md-input-container flex="50">
+                        <label><span class="glyphicon glyphicon-home"></span> City:{{user.city}}</label>
+                  </md-input-container>
+                  <md-input-container flex="50">
+                        <label><span class="glyphicon glyphicon-home"></span> State:{{user.state}}</label>
+                  </md-input-container>
+              </div>
+              <div flex="100" layout="row" class="md-inline-form">
+                  <md-input-container flex="50">
+                        <label><span class="glyphicon glyphicon-home"></span> Country:{{user.country}}</label>
+                  </md-input-container>
+                  <md-input-container flex="50">
+                        <label><span class="glyphicon glyphicon-qrcode"></span> Pin Code:{{user.pin}}</label>
+                  </md-input-container>
+              </div>
+          
+      </md-content>
+    </md-whiteframe>
+</div>

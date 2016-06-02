@@ -1,0 +1,41 @@
+<nav class="navbar navbar-fixed-top navbar-inverse" ng-init="initScope()">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" style="padding-top:5px;padding-left:0px;"><img src="https://s3.amazonaws.com/myfirstbkt2016/pal-logo.png" height="48" width="160"></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li></li>
+      <li class="dropdown" id="drp"><a class="dropdown-toggle" data-toggle="dropdown"><span style="color:white;"class="glyphicon glyphicon-align-justify"></span><span class="glyphicon glyphicon-chevron-down"></span></a>
+        <ul class="dropdown-menu">
+          <li><a ui-sref="userdash.home" ui-sref-opts="{reload: true}"><i style="color:#0000aa;" class="glyphicon glyphicon-home"></i> Home</span></a></li>
+          <li><a ui-sref="userdash.profile" ui-sref-opts="{reload: true}"><i style="color:#0000aa;" class="glyphicon glyphicon-user"></i> Profile</a></li>
+          <li><a ui-sref="userdash.address" ui-sref-opts="{reload: true}"><i style="color:#11dd11;" class="glyphicon glyphicon-calendar"></i> Address</a></li>
+          <li class="nav-divider"></li>
+          <li><a ui-sref="dash.dashRide"><i class="fa fa-reorder"></i> Book Ride</a></li>
+          <li class="nav-divider"></li>
+          <li><a ng-click="logout()" class="pointer" ui-sref="logout"><i style="color:#4885ed;" class="glyphicon glyphicon-cog"></i> Logout</a></li>
+        </ul>
+      </li>
+      <li><a ui-sref="userdash.home" ui-sref-opts="{reload: true}"><i style="color:#0000aa;" class="glyphicon glyphicon-home"></i> Home</span></a></li>
+          <li><a ui-sref="userdash.profile" ui-sref-opts="{reload: true}"><i style="color:#0000aa;" class="glyphicon glyphicon-user"></i> Profile</a></li>      
+    </ul>
+   <ul class="nav navbar-nav navbar-right">
+    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" style="padding-top:7px;"><span style="font-size: 22px;padding-top:10px;" class="glyphicon glyphicon-bell grey-text"></span></a>
+      <ul class="dropdown-menu">
+          <li></li>
+      </ul>
+    </li>
+
+    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" style="padding-top:10px;"><img src="img/browse-img.png" class="img-circle" alt="Cinque Terre" width="35" height="35"></a>
+        <ul class="dropdown-menu">
+          <li><a ui-sref="dash.dashProfile" ui-sref-opts="{reload: true}"><i style="color:red" class="glyphicon glyphicon-user"></i> {{user.fname}}</a></li>
+          <li><a ui-sref="dash.dashProfile" ui-sref-opts="{reload: true}">({{user.email}})</a></li>
+          <li>&nbsp;</li>
+          <li><a ng-click="logout()" class="pointer" ui-sref="logout"><i style="color:#4885ed;" class="glyphicon glyphicon-cog"></i> Logout</a></li>
+        </ul>
+      </li>
+   </ul>
+  </div>
+</nav>
+<div style="padding-top:80px;" autoscroll="false" ui-view></div>
+  

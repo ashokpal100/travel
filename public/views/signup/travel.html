@@ -1,0 +1,137 @@
+<div class="frameContainer" layout layout-align="center"layout-wrap style="padding-top:1px;padding-left:1px;padding-right:1px;">
+        <md-whiteframe class="md-whiteframe-1dp"  layout="row" flex-xs="100" flex-gt-sm="70" flex-gt-md="40" layout layout-align="center center">
+        <md-content layout-padding  flex="100" style="padding-top:0px;">
+        <form name="myForm" style="padding-top:0px;">
+                <div flex="100" layout="row" class="md-inline-form" layout-align="center center" style="padding-top:0px;">
+                 <div class="logo-holder">
+                          <img src="img/browse-img.png" alt="Profile Pic">
+                          <input  type="file" ng-file-select="selectedProfilePic($files)" accept="image/*" ng-capture="'camera'|'other'" class="upload-hover" style="overflow: hidden;" ng-model="myModel" media-preview>
+                            
+                            <input type="file" ng-file-select="selectedProfilePic($files)" accept="image/*" ng-capture="'camera'|'other'" class="upload-hover" __wrapper_for_parent_="true" style="width: 1px; height: 1px; opacity: 0; position: absolute; padding: 0px; margin: 0px; overflow: hidden;">
+              </div>
+               </div>
+                <div flex="100" layout="row" style="padding-top:33px;" layout-align="center center">
+                  <div>
+                        <h4>Travels Sign Up</h4>
+                  </div>
+        </div>
+               <div flex="100" layout="row" class="md-inline-form">
+                  <md-input-container flex="50">
+                        <label><span class="fa fa-user"></span> First Name</label>
+                        <input ng-model="user.fName" name="fName" required ng-pattern="/^[a-zA-Z]{1,20}$/" md-placeholder="enter name a to z">
+                          <div ng-messages="userForm.fName.$error && userForm.fName.$invalid" role="alert" multiple>
+                            <div ng-message="required" class="my-message">Name is required.</div>
+                            <div ng-message="pattern" class="my-message">Max length 20 char</div>
+                         </div>
+                  </md-input-container>
+                  <md-input-container flex="50">
+                        <label><span class="fa fa-user"></span> Last Name</label>
+                        <input ng-model="user.lName" name="lName" required ng-pattern="/^[a-zA-Z]{1,20}$/" md-placeholder="enter name a to z">
+                          <div ng-messages="userForm.lName.$error && userForm.lName.$invalid" role="alert" multiple>
+                            <div ng-message="required" class="my-message">Last name  is required.</div>
+                            <div ng-message="pattern" class="my-message">Max length 20 char</div>
+                         </div>
+                  </md-input-container>
+              </div>
+              <div flex="100" layout="row" class="md-inline-form">
+                  <md-input-container flex="50">
+                      <label><span class="fa fa-phone"></span>  Mobile No.</label>
+                      <input ng-model="user.mobileNumber"  name="mobileNumber"required ng-pattern="/^[0-9]{10}$/" md-maxlength="10">
+                        <div ng-messages="userForm.mobileNumber.$error && userForm.mobileNumber.$invalid" role="alert" multiple>
+                            <div ng-message="required" class="my-message">Mobile number is required.</div>
+                            <div ng-message="pattern" class="my-message">Only Number is allow</div>
+                            <div ng-message="md-maxlength" class="my-message">Don't use the long 10 digit</div>
+                         </div>
+                  </md-input-container>
+                  <md-input-container flex="50" class="md-block" flex-xs>
+                    <p class="input-group">
+              <input type="text" class="form-control"
+              datepicker-popup="{{format}}" 
+              ng-model="dt"
+              is-open="opened" min-date="minDate"
+              max-date="'2015-06-22'" 
+              datepicker-options="dateOptions" 
+              date-disabled="disabled(date, mode)" 
+              ng-required="true" close-text="Close" />
+              <span class="input-group-btn"> 
+                <button type="button" class="btn btn-default" ng-click="open($event)">
+                <i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+                  </md-input-container>
+              </div>
+       <div flex="100" layout="row">
+                  <md-input-container flex="50">
+                        <label><span class="fa fa-lock"></span> Enter Password</label>
+                        <input type="password" id="password" name="password" ng-model="formData.password" ng-minlength="8" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" required  />
+   <span ng-show="myForm.password.$error.required && myForm.password.$dirty">required</span>
+   <span ng-show="!myForm.password.$error.required && (myForm.password.$error.minlength || myForm.password.$error.maxlength) && myForm.password.$dirty">Passwords must be between 8 and 20 characters.</span>
+   <span ng-show="!myForm.password.$error.required && !myForm.password.$error.minlength && !myForm.password.$error.maxlength && myForm.password.$error.pattern && myForm.password.$dirty">Must contain one lower &amp; uppercase letter, and one non-alpha character (a number or a symbol.)</span>
+                  </md-input-container>
+                  <md-input-container flex="50">
+                        <label><span class="fa fa-lock"></span> Re-enter Password</label>
+         <input type="password" name="repeatPassword" id="repeatPassword" placeholder="repeat password" ng-model="user.repeatPassword" repeat-password="password" required>
+   <span ng-show="myForm.password_c.$error.required && myForm.password_c.$dirty">Please confirm your password.</span>
+   <span ng-show="!myForm.password_c.$error.required && myForm.password_c.$error.noMatch && myForm.password.$dirty">Passwords do not match.</span>
+                  </md-input-container>
+              </div>
+               <div flex="100" layout="row">
+                  <md-input-container flex="100">
+                        <label><span class="fa fa-envelope"></span>  Email</label>
+                        <input ng-model="user.email" name="email" type="email" required>
+                           <div id="emailMsg1" style="color:red;"> {{emailMsg}} </div>
+                  </md-input-container></div>
+            <div flex="100" layout="row">
+           <div flex="100"layout="row" class="md-inline-form" layout layout-align="center center" style="padding-top:15px;">
+
+          <md-button class="md-raised md-primary" ng-click="signup()" ng-disabled="userForm.$invalid">Register</md-button><md-button class="md-raised md-primary" ng-click="">Cancel</md-button>
+
+        </div>
+              </div> 
+              
+             </form>
+             <h2>Extended version (nxEqualEx)</h2>
+    <form name="formEx">
+      <md-input-container flex> 
+          <label>Password</label> 
+            <input ng-model="loginEx.password" type="password" name="password" required>
+        <div ng-show="formEx.password.$error.required && formEx.password.$dirty">Required</div>
+        </md-input-container>
+        <md-input-container flex> 
+          <label> c Password</label> 
+        <input ng-model="loginEx.verify" type="password" name="verify" required nx-equal-ex="loginEx.password"><br>
+        <div class="error" ng-show="formEx.verify.$error.nxEqualEx">Must be equal!</div>
+        </md-input-container>
+    </form>
+           </md-content>
+        </div>
+</md-whiteframe></div>
+
+
+   <!--  <form name="userForm">
+        <md-input-container flex> 
+          <label>Old Password</label> 
+          <input type="password" name="oldPassword" ng-model="oldPassword" required>
+          <div ng-messages="userForm.oldPassword.$error">
+              <div ng-message="required">This is required.</div>
+           </div>
+        </md-input-container>
+        <md-input-container flex> 
+          <label>New Password</label> 
+          <input type="password" name="newPassword" ng-model="newPassword" required un-matcher="{{oldPassword}}">
+          <div ng-messages="userForm.newPassword.$error">
+              <div ng-message="required">This is required.</div>
+              <div ng-message="unMatcher">New Password cannot be same as Old Password.</div>
+           </div>
+        </md-input-container>
+        <md-input-container flex> 
+          <label>Confirm Password</label> 
+          <input type="password" name="confirmPassword" ng-model="confirmPassword" required matcher="{{oldPassword}}">
+          <div ng-messages="userForm.confirmPassword.$error">
+              <div ng-message="required">This is required.</div>
+              <div ng-message="matcher">Confirm Password should be same as old Password.</div>
+           </div>
+        </md-input-container>
+        <md-button class="md-raised md-primary" ng-disabled="userForm.$invalid">Sumbit</md-button>
+    </form>
+ -->
