@@ -1,4 +1,15 @@
+<style type="text/css">
+  .background-image{
+    background-image: url('img/login@2x.jpg');
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+</style>
 <div ui-view="navbar" style="padding-bottom:0px;"></div>
+<div class="background-image">
 <div class="frameContainer" layout layout-align="center"layout-wrap style="padding-top:0px;padding-left:1px;padding-right:1px;">
 
         <md-whiteframe class="md-whiteframe-1dp"  layout="row" flex-xs="100" flex-gt-sm="70" flex-gt-md="40" layout layout-align="center center">
@@ -27,4 +38,26 @@
         </md-content>
 </md-whiteframe>
 </div>
-<div autoscroll="false" ui-view></div>
+<div autoscroll="false" ui-view></div></div>
+
+
+
+<!-- <div class="cg-notify-message ng-scope good-notification cg-notify-message-center" ng-class="[$classes, 
+    $position === 'center' ? 'cg-notify-message-center' : '',
+    $position === 'left' ? 'cg-notify-message-left' : '',
+    $position === 'right' ? 'cg-notify-message-right' : '']" ng-style="{'margin-left': $centerMargin}" style="margin-left: -156px; top: 660.7px; margin-top: -62px; visibility: visible; opacity: 0;" data-closing="true">
+
+    <div ng-show="!$messageTemplate" class="ng-binding" aria-hidden="false">
+        Profile picture successfully added for upload
+    </div>
+
+    <div ng-show="$messageTemplate" class="cg-notify-message-template ng-hide" aria-hidden="true">
+        
+    </div>
+
+    <button type="button" class="cg-notify-close" ng-click="$close()" tabindex="0">
+        <span aria-hidden="true">×</span>
+        <span class="cg-notify-sr-only">Close</span>
+    </button>
+
+</div> -->

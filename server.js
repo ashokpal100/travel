@@ -3,9 +3,8 @@ var app            = express();
 var bodyParser     = require('body-parser');
 var methodOverride = require('method-override');
 var mysql 		   = require('mysql');
-var nodemailer	   = require('nodemailer');
+
 var jade		   = require('jade');
-var fs        	   = require('fs');
 var passport       = require('passport');
 var morgan         = require('morgan');
 var cookieParser   = require('cookie-parser');
@@ -13,17 +12,18 @@ var session        = require('express-session');
 var flash          = require('connect-flash');
 
 
-//app.use(morgan('dev')); // log every request to the console
+app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
 
 
 app.use(session({secret: '2C44-4D44-WppQ38S',resave: true,saveUninitialized: true}));
-
+var sessionInfo;
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
-app.set('view engine', 'jade')
-app.set('views', __dirname + './views')
+app.set('view engine', 'jade');
+app.set('views', __dirname + './views');
+app.set('views', __dirname + './views/templates');
 
  app.use(bodyParser.json()); 
  app.use(bodyParser.json({ type: 'application/vnd.api+json' })); 
@@ -34,7 +34,7 @@ app.set('views', __dirname + './views')
 //ashok
 
 require('./config/db')(mysql);
-require('./app/routes/route')(app);
+require('./app/routes/route')(app,session,sessionInfo);
 //require('./config/passport')(mysql,passport);
 
 app.listen(9000, '0.0.0.0', function() {

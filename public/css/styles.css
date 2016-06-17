@@ -15,15 +15,15 @@ a:hover {
   text-decoration: none;
 }
 .logo-holder {
-  width: 70px;
-  height: 70px;
+  width: 90px;
+  height: 90px;
   background-color: #fff;
   border-radius: 50%;
   position: relative;
   overflow: hidden;
   margin: 0 auto;
-  top: 35px;
-  cursor: pointer;
+  top: 0px;
+  text-align: center;
 }
 .logo-holder img {
   max-width: 70px;
@@ -60,4 +60,31 @@ a:hover {
   left: -5px;
   top: -5px;
 }
+ {
+    background-image: url("img_tree.gif"), url("img_flwr.gif");
+    background-color: #cccccc;
+}
+
+div.p_photo-group {
+    width: 60px;
+    height: 60px;
+    background: url(/img/browse-img.png);
+    background-size: 60px 60px,cover;
+    background-repeat: no-repeat;
+    overflow: hidden;    
+    position: relative;
+}
+.p_photo{
+  display: block !important;
+    width: 60px !important;
+    height: 60px !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
+}
+/*.selectedFile{
+  margin-bottom: 20px;
+  color: #;
+  font-size: 15px;
+  font-weight: bolder;
+}*/
 

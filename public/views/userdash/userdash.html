@@ -26,12 +26,12 @@
       </ul>
     </li>
 
-    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" style="padding-top:10px;"><img src="img/browse-img.png" class="img-circle" alt="Cinque Terre" width="35" height="35"></a>
+    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" style="padding-top:10px;"><img src="{{user.pic}}" class="img-circle" alt="Cinque Terre" width="35" height="35"></a>
         <ul class="dropdown-menu">
           <li><a ui-sref="dash.dashProfile" ui-sref-opts="{reload: true}"><i style="color:red" class="glyphicon glyphicon-user"></i> {{user.fname}}</a></li>
           <li><a ui-sref="dash.dashProfile" ui-sref-opts="{reload: true}">({{user.email}})</a></li>
           <li>&nbsp;</li>
-          <li><a ng-click="logout()" class="pointer" ui-sref="logout"><i style="color:#4885ed;" class="glyphicon glyphicon-cog"></i> Logout</a></li>
+          <li><a ui-sref="/" class="pointer" ui-sref="logout"><i style="color:#4885ed;" class="glyphicon glyphicon-cog"></i> Logout</a></li>
         </ul>
       </li>
    </ul>

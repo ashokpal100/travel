@@ -1,16 +1,13 @@
 angular.module('palService', []).service('palSrv', function($http) {
     return {
-                signup : function(data) {
-    				return $http.post('/signup', data);
-    			},
     			login : function(data) {
     				return $http.post('/login', data);
     			},
                 dataById : function(id) {
                     return $http.get('/getDataById/'+id);
                 },
-                update : function(id, data) {
-                    return $http.put('/password/'+id, data);
+                update : function(data) {
+                    return $http.put('/emailVerified/'+data);
                 },
                 forgot : function(data) {
                     return $http.post('/forgotPass', data);

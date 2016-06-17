@@ -3,10 +3,17 @@
         <md-content layout-padding  flex="100" style="padding-top:0px;">
         <form name="userForm" style="padding-top:0px;">
           <div flex="100" layout="row" style="background-color:" layout-align="center center">
-            <div class="logo-holder" >
+            <!-- <div class="logo-holder">
+              <img src="/img/browse-img.png" alt="Nimbus logo">
+              <div ng-file-select="selectedProfilePic($files)" accept="image/*" ng-capture="'camera'|'other'" class="upload-hover" style="overflow: hidden;">
+                <div class="glyphicon glyphicon-camera"></div>
+                <input type="file" ng-file-select="selectedProfilePic($files)" accept="image/*" ng-capture="'camera'|'other'" class="upload-hover" __wrapper_for_parent_="true" style="width: 1px; height: 1px; opacity: 0; position: absolute; padding: 0px; margin: 0px; overflow: hidden;">
+              </div>
+            </div> -->
+           <!--  <div class="logo-holder" >
                           <img src="img/browse-img.png" alt="Profile Pic">
                           <input  type="file" id="fileUpload"  accept="image/*" class="upload-hover" style="overflow: hidden;" ng-model="myModel" media-preview>
-                </div>
+            </div> -->
         </div>
                 <div flex="100" layout="row" class="md-inline-form" layout-align="center center" style="padding-top:0px;">
                  
@@ -19,16 +26,16 @@
                <div flex="100" layout="row" class="md-inline-form">
                   <md-input-container flex="50">
                         <label><span class="fa fa-user"></span> First Name</label>
-                        <input ng-model="user.fName" name="fName" required ng-pattern="/^[a-zA-Z]{1,20}$/" md-placeholder="enter name a to z">
-                          <div ng-messages="userForm.fName.$error && userForm.fName.$invalid" role="alert" multiple>
+                        <input ng-model="user.fname" name="fname" required ng-pattern="/^[a-zA-Z]{1,20}$/" md-placeholder="enter name a to z">
+                          <div ng-messages="userForm.fname.$error && userForm.fname.$invalid" role="alert" multiple>
                             <div ng-message="required" class="my-message">Name is required.</div>
                             <div ng-message="pattern" class="my-message">Max length 20 char</div>
                          </div>
                   </md-input-container>
                   <md-input-container flex="50">
                         <label><span class="fa fa-user"></span> Last Name</label>
-                        <input ng-model="user.lName" name="lName" required ng-pattern="/^[a-zA-Z]{1,20}$/" md-placeholder="enter name a to z">
-                          <div ng-messages="userForm.lName.$error && userForm.lName.$invalid" role="alert" multiple>
+                        <input ng-model="user.lname" name="lname" required ng-pattern="/^[a-zA-Z]{1,20}$/" md-placeholder="enter name a to z">
+                          <div ng-messages="userForm.lname.$error && userForm.lname.$invalid" role="alert" multiple>
                             <div ng-message="required" class="my-message">Last name  is required.</div>
                             <div ng-message="pattern" class="my-message">Max length 20 char</div>
                          </div>
@@ -75,10 +82,20 @@
                   <!-- <p>{{time | date:'yyyy-MM-dd HH:mm:ss'}}</p>
                       <p>{{parsed}}</p> -->
               </div>
+            <div id="selectedFile" class="selectedFile" flex="100" style="padding-left:50px;font-weight:bold;">Upload Profile Image:</div> 
             <div flex="100" layout="row">
+              <div flex="10">&nbsp;</div>
+              <div class="input-group p_photo-group">
+                <input id="p_photo-password" type="file" class="p_photo inputbg" file-model = "myFile" name="p_photo" name="image" image="image">
+              </div>
+
+              <div flex="50" style="text-align:right;">
+               <img class="logo-holder" type="file" ng-show="image" ng-src="{{image.url}}" type="{{image.file.type}}" name="p_photo" style="text-align:right;"></div>
+            </div>
+            <div flex="100" layout="row" >
            <div flex="100"layout="row" class="md-inline-form" layout layout-align="center center" style="padding-top:15px;">
 
-          <md-button class="md-raised md-primary" ng-click="signup()" ng-disabled="userForm.$invalid">Register</md-button><md-button class="md-raised md-primary" ng-click="">Cancel</md-button>
+          <md-button class="md-raised md-primary" ng-click="signup()" ng-disabled="userForm.$invalid">Register</md-button>
 
         </div>
               </div> 

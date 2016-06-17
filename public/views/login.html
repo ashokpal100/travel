@@ -1,12 +1,23 @@
+<style type="text/css">
+  .background-image{
+    background-image: url('img/login@2x.jpg');
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+</style>
 <div ui-view="navbar"></div>
-<div class="frameContainer" layout layout-align="center"layout-wrap style="padding-top:80px;padding-left:1px;padding-right:1px;">
+
+<div class="frameContainer background-image" layout layout-align="center"layout-wrap style="padding-top:80px;padding-left:1px;padding-right:1px;padding-bottom:133px;" >
         <md-whiteframe class="md-whiteframe-1dp"  layout="row" flex-xs="90" flex-gt-sm="70" flex-gt-md="30" layout layout-align="center center">
         <md-content flex="100" style="padding-top:0px;padding-left:20px;padding-right:20px;">
         <form name="userForm" style="padding-top:0px;padding-left:0px;">
                 <div flex="100" layout="row"layout-align="center center">
                         <h3>Login</h3>
                </div>
-               <div flex="100" layout="row">
+               <div flex="100" layout="row" style="margin-bottom:0px;">
                   <md-input-container flex="100">
                         <label for="input_0"><span class="fa fa-user"></span> Email Address</label>
                         <input type="email" ng-model="user.email" name="email">
@@ -21,7 +32,7 @@
                   </md-input-container>
               </div>
            <div flex="100"layout="row" class="md-inline-form" layout layout-align="center center" style="padding-top:0px;">
-          <button style="padding-top:0px;" ng-click="login()" class="md-primary pull-right md-button md-default-theme"type="submit" flex="100"><span class="ng-scope">Login</span></button>
+          <button style="padding-top:0px;background-color:#4885ed;color:white" ng-click="login()" class="md-primary pull-right md-button md-default-theme"type="submit" flex="100"><span class="ng-scope">Login</span></button>
         </div>
         <div flex="100" layout="row" style="padding-right:0px;">
                   <md-input-container flex="100" style="padding-right:0px;">
